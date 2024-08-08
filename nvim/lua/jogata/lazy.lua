@@ -47,9 +47,9 @@ require("lazy").setup({
         end
     },
 
-    {
-        "HiPhish/rainbow-delimiters.nvim"
-    },
+    -- {
+    --     "HiPhish/rainbow-delimiters.nvim"
+    -- },
 
     {
         'm4xshen/autoclose.nvim'
@@ -172,38 +172,30 @@ require("lazy").setup({
 
 	-- color themes
 
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+    { "folke/tokyonight.nvim" },
+    
+    { "rebelot/kanagawa.nvim" },
+
     {
-        "slugbyte/lackluster.nvim"
+        "Aliqyan-21/darkvoid.nvim",
+        config = function()
+            require("darkvoid").setup({
+                transparent = false,
+                glow = true
+            })
+        end
     },
 
     {
         "Mofiqul/dracula.nvim",
         opts = {
-            transparent_bg = false,
+            transparent_bg = true,
             italic_comment = true
         }
     },
 
-    {
-        "folke/tokyonight.nvim",
-    },
-
-    {
-        "Shatur/neovim-ayu"
-    },
-
-    {
-        "Everblush/nvim"
-    },
-
-    {
-        "diegoulloao/neofusion.nvim",
-        priority = 1000 ,
-        config = true,
-        opts = {
-            transparent_mode = true
-        }
-    },
 
     {
         "Mofiqul/vscode.nvim",
@@ -236,12 +228,8 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {
-            transparent = true
+            transparent = tnrue
         },
-    },
-    
-    {
-        "rebelot/kanagawa.nvim"
     },
 
     {
