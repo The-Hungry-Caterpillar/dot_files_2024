@@ -86,27 +86,6 @@ require("lazy").setup({
     -- {
     --     "miversen33/sunglasses.nvim"
     -- },
-    --
-	{
-		"theprimeagen/harpoon",
-		branch = "harpoon2",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("harpoon"):setup()
-		end,
-		keys = {
-			{ "<leader>a", function() require("harpoon"):list():add() end },
-			{ "<leader>o", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end },
-			{ "<leader>1", function() require("harpoon"):list():select(1) end },
-			{ "<leader>2", function() require("harpoon"):list():select(2) end },
-			{ "<leader>3", function() require("harpoon"):list():select(3) end },
-			{ "<leader>4", function() require("harpoon"):list():select(4) end },
-			{ "<leader>5", function() require("harpoon"):list():select(5) end }
-    -- vim.keymap.set("n", "<leader>d", ":<C-U>bprevious <bar> bdelete #<CR>")
-
-		},
-
-	},
 
 	-- {
 	-- 	'mbbill/undotree',
@@ -178,6 +157,8 @@ require("lazy").setup({
     
     { "rebelot/kanagawa.nvim" },
 
+    { "savq/melange-nvim" },
+
     {
         "Aliqyan-21/darkvoid.nvim",
         config = function()
@@ -205,30 +186,11 @@ require("lazy").setup({
     },
 
     {
-        "shaunsingh/nord.nvim",
-        config = function()
-            vim.g.nord_disable_background = false
-            vim.g.nord_italic = true
-            vim.g.nord_bold = true
-        end
-    },
-
-    {
-        'sainnhe/everforest',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            everforest_background = "soft"
-        end
-
-    },
-
-    {
         "craftzdog/solarized-osaka.nvim",
         lazy = false,
         priority = 1000,
         opts = {
-            transparent = tnrue
+            transparent = false
         },
     },
 
@@ -248,7 +210,7 @@ require("lazy").setup({
             -- Optionally configure and load the colorscheme
             -- directly inside the plugin declaration.
             vim.g.gruvbox_material_enable_italic = true
-            vim.g.gruvbox_material_transparent_background = 2
+            vim.g.gruvbox_material_transparent_background = 0
             vim.g.gruvbox_material_background = "hard"
         end
     }
