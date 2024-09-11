@@ -83,6 +83,16 @@ require("lazy").setup({
         end
     },
 
+    {
+        "kdheepak/lazygit.nvim",
+        config = function()
+            require("telescope").load_extension("lazygit")
+        end,
+        keys = {
+            { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+        }
+    },
+
     -- {
     --     "miversen33/sunglasses.nvim"
     -- },
@@ -157,8 +167,10 @@ require("lazy").setup({
     
     { "rebelot/kanagawa.nvim" },
 
-    { "savq/melange-nvim" },
+    { "savq/melange-nvim", },
 
+    { "navarasu/onedark.nvim" },
+    
     {
         "Aliqyan-21/darkvoid.nvim",
         config = function()
@@ -177,14 +189,6 @@ require("lazy").setup({
         }
     },
 
-
-    {
-        "Mofiqul/vscode.nvim",
-        opts = {
-            transparent_background = true
-        }
-    },
-
     {
         "craftzdog/solarized-osaka.nvim",
         lazy = false,
@@ -192,14 +196,6 @@ require("lazy").setup({
         opts = {
             transparent = false
         },
-    },
-
-    {
-        'maxmx03/solarized.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-        end,
     },
 
     {

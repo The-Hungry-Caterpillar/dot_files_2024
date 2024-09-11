@@ -1,9 +1,10 @@
 function ColorMe(color)
     -- color = color or "tokyonight-moon"
-    color = color or "dracula"
+    -- color = color or "dracula"
     -- color = color or "darkvoid"
     -- color = color or "catppuccin-latte"
     -- color = color or "catppuccin-macchiato"
+    color = color or "onedark"
     -- color = color or "gruvbox-material"
     -- color = color or "solarized-osaka-storm"
     -- color = color or "solarized-osaka-day"
