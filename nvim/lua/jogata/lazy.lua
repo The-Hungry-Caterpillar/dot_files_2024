@@ -130,12 +130,12 @@ require("lazy").setup({
                         vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {})
                     end
                 },
-                -- -- for vertical split
-                -- min_editor_width = 72,
-                -- rconsole_width = 70,
-                -- for horizontal split
-                rconsole_width = 0,
-                rconsole_height = 20,
+                -- for vertical split
+                min_editor_width = 72,
+                rconsole_width = 70,
+                -- -- for horizontal split
+                -- rconsole_width = 0,
+                -- rconsole_height = 20,
                 disable_cmds = {
                     "RClearConsole",
                     "RCustomStart",
@@ -208,6 +208,16 @@ require("lazy").setup({
             vim.g.gruvbox_material_enable_italic = true
             vim.g.gruvbox_material_transparent_background = 0
             vim.g.gruvbox_material_background = "hard"
+        end
+    },
+
+    {
+        "sainnhe/sonokai",
+        config = function()
+            -- Optionally configure and load the colorscheme
+            -- directly inside the plugin declaration.
+            vim.g.sonokai_enable_italic = true
+            vim.g.sonokai_style = "andromeda"
         end
     }
 
