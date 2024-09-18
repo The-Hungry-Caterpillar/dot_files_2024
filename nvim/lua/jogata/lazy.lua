@@ -93,6 +93,17 @@ require("lazy").setup({
         }
     },
 
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+        keys = {
+            { "<C-h>", "<cmd>TmuxNavigateLeft<CR>", "window left"},
+            { "<C-j>", "<cmd>TmuxNavigateUp<CR>", "window up"},
+            { "<C-k>", "<cmd>TmuxNavigateDown<CR>", "window down"},
+            { "<C-l>", "<cmd>TmuxNavigateRight<CR>", "window right"}
+        }
+    },
+
     -- {
     --     "miversen33/sunglasses.nvim"
     -- },

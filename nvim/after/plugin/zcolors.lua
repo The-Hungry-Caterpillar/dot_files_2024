@@ -1,7 +1,7 @@
 function ColorMe(color)
     -- color = color or "tokyonight-moon"
-    -- color = color or "dracula"
-    color = color or "sonokai"
+    color = color or "dracula"
+    -- color = color or "sonokai"
     -- color = color or "darkvoid"
     -- color = color or "catppuccin-latte"
     -- color = color or "catppuccin-macchiato"
