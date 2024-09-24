@@ -230,8 +230,17 @@ require("lazy").setup({
             vim.g.sonokai_enable_italic = true
             vim.g.sonokai_style = "andromeda"
         end
+    },
+
+    {
+        "killitar/obscure.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {}
+    },
+
+    {
+        'paulo-granthon/hyper.nvim',
     }
-
-
 
 })
