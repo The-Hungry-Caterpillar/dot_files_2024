@@ -7,27 +7,9 @@ Clone this repo to ~
 cd ~
 # whatever command to install zsh
 chsh -s $(which zsh) # change shell
-# install oh-my-zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# install powerline10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-# enable autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# place aliases file
-ln -s ~/dotfiles/aliases.zsh ${ZSH_CUSTOM}/aliases.zsh
+# copy zshrc to ~/.zshrc
 # if using miniconda
 ./miniconda3/bin/conda init zsh
-```
-Put the following in `~/.zshrc` plugins section
-```
-plugins=(
-    git
-    compleat
-    copybuffer
-    copypath
-    eza
-    zsh-autosuggestions
-)
 ```
 
 ## Neovim setup
