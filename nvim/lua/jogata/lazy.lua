@@ -43,7 +43,7 @@ require("lazy").setup({
         config = function()
             local leap = require('leap')
             leap.add_default_mappings()
-            leap.opts.case_sensitive = true
+            leap.opts.case_sensitive = false
         end
     },
 
@@ -104,6 +104,14 @@ require("lazy").setup({
         }
     },
 
+    {
+        'stevearc/dressing.nvim'
+    },
+
+    {
+        'xiyaowong/virtcolumn.nvim'
+    },
+
     -- {
     --     "miversen33/sunglasses.nvim"
     -- },
@@ -118,9 +126,6 @@ require("lazy").setup({
 	-- 	lazy = false
 	-- },
 
-    {
-        'stevearc/dressing.nvim'
-    },
 
 	-- r plugins
 	{
@@ -176,11 +181,25 @@ require("lazy").setup({
 
     { "folke/tokyonight.nvim" },
     
-    { "rebelot/kanagawa.nvim" },
-
     { "savq/melange-nvim", },
 
     { "navarasu/onedark.nvim" },
+
+    { 'paulo-granthon/hyper.nvim' },
+
+    { 'NLKNguyen/papercolor-theme' },
+
+    { 'yorickpeterse/vim-paper' },
+
+    { 
+        'rebelot/kanagawa.nvim',
+        config = function()
+            require('kanagawa').setup({
+                transparent = true
+            })
+        end
+    },
+
     
     {
         "Aliqyan-21/darkvoid.nvim",
@@ -205,21 +224,8 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {
-            transparent = false
+            transparent = true
         },
-    },
-
-    {
-        'sainnhe/gruvbox-material',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            -- Optionally configure and load the colorscheme
-            -- directly inside the plugin declaration.
-            vim.g.gruvbox_material_enable_italic = true
-            vim.g.gruvbox_material_transparent_background = 0
-            vim.g.gruvbox_material_background = "hard"
-        end
     },
 
     {
@@ -237,10 +243,6 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {}
-    },
-
-    {
-        'paulo-granthon/hyper.nvim',
     }
 
 })

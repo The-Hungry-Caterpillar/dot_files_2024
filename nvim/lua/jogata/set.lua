@@ -37,10 +37,10 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.lazyredraw = true
 
-vim.opt.mouse=v
+--vim.opt.mouse=v
 
 
-vim.loader.disable()
+--vim.loader.disable()
 
 -- do
 --     -- register autocommand callacks to cleverly toggle
