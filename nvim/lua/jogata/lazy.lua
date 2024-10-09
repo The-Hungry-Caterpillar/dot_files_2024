@@ -72,7 +72,7 @@ require("lazy").setup({
         },
         init = function() vim.g.barbar_auto_setup = false end,
         opts = {
-            insert_at_start = true,
+            insert_at_start = false,
         },
     },
 
@@ -128,9 +128,7 @@ require("lazy").setup({
 
 
 	-- r plugins
-	{
-		"R-nvim/cmp-r"
-	},
+	{ "R-nvim/cmp-r" },
 
 	{
 		"R-nvim/R.nvim",
@@ -149,9 +147,13 @@ require("lazy").setup({
                 -- for vertical split
                 min_editor_width = 72,
                 rconsole_width = 70,
+                nosplitright = true,
                 -- -- for horizontal split
                 -- rconsole_width = 0,
                 -- rconsole_height = 20,
+                -- other keymaps
+                pipe_keymap = '',
+                assignment_keymap = '<Localleader>,',
                 disable_cmds = {
                     "RClearConsole",
                     "RCustomStart",
@@ -189,13 +191,13 @@ require("lazy").setup({
 
     { 'NLKNguyen/papercolor-theme' },
 
-    { 'yorickpeterse/vim-paper' },
+    { 'yorickpeterse/vim-paper', name = 'paper'},
 
     { 
         'rebelot/kanagawa.nvim',
         config = function()
             require('kanagawa').setup({
-                transparent = true
+                transparent = false
             })
         end
     },
@@ -224,7 +226,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {
-            transparent = true
+            transparent = false
         },
     },
 
