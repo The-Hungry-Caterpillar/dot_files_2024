@@ -39,6 +39,12 @@ vim.lazyredraw = true
 
 --vim.opt.mouse=v
 
+vim.opt.laststatus = 0
+-- vim.api.nvim_set_hl(0 , 'Statusline', {link = 'Normal'})
+-- vim.api.nvim_set_hl(0 , 'StatuslineNC', {link = 'Normal'})
+-- local str = string.repeat('-', vim.api.nvim_win_get_width(0))
+-- vim.opt.statusline = str
+
 
 --vim.loader.disable()
 

@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-	-- essential plugins
+	-- Essential plugins
 	{ 
 		"nvim-telescope/telescope.nvim",
 		dependencies = { 'nvim-lua/plenary.nvim' }
@@ -32,13 +32,6 @@ require("lazy").setup({
     },
 
     {
-        "nvimdev/indentmini.nvim",
-        config = function()
-            require("indentmini").setup()
-        end
-    },
-
-    {
         "ggandor/leap.nvim",
         config = function()
             local leap = require('leap')
@@ -47,40 +40,9 @@ require("lazy").setup({
         end
     },
 
-    -- {
-    --     "HiPhish/rainbow-delimiters.nvim"
-    -- },
 
     {
         'm4xshen/autoclose.nvim'
-    },
-
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
-    },
-
-    {
-        "karb94/neoscroll.nvim"
-    },
-
-    {
-        'romgrk/barbar.nvim',
-        dependencies = {
-            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-        },
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = {
-            insert_at_start = false,
-        },
-    },
-
-    {
-        "NvChad/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup()
-        end
     },
 
     {
@@ -105,29 +67,72 @@ require("lazy").setup({
     },
 
     {
-        'stevearc/dressing.nvim'
+        "chrisgrieser/nvim-origami",
+        event = "VeryLazy",
+        opts = {}, -- needed even when using default config
+    },
+
+
+    
+    -- Aesthetic plugins
+
+    { "karb94/neoscroll.nvim" },
+
+    { 'stevearc/dressing.nvim' },
+
+    { 'xiyaowong/virtcolumn.nvim' },
+
+    {
+        'kevinhwang91/nvim-ufo',
+        dependencies = { 'kevinhwang91/promise-async' },
+        config = function()
+            vim.o.foldcolumn = '1' -- '0' is not bad
+            vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+            vim.o.foldlevelstart = 99
+            vim.o.foldenable = true
+            -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+            vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+            vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+            -- (Note: the `nvim-treesitter` plugin is *not* needed.)
+            -- ufo uses the same query files for folding (queries/<lang>/folds.scm)
+            -- performance and stability are better than `foldmethod=nvim_treesitter#foldexpr()`
+            require('ufo').setup({
+                provider_selector = function(bufnr, filetype, buftype)
+                    return {'treesitter', 'indent'}
+                end
+            })
+        end
+
     },
 
     {
-        'xiyaowong/virtcolumn.nvim'
+        "NvChad/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end
     },
 
-    -- {
-    --     "miversen33/sunglasses.nvim"
-    -- },
+    {
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {
+            insert_at_start = false,
+        },
+    },
 
-	-- {
-	-- 	'mbbill/undotree',
-	-- 	lazy = false
-	-- },
-
-	-- {
-	-- 	'tpope/vim-fugitive',
-	-- 	lazy = false
-	-- },
+    {
+        "nvimdev/indentmini.nvim",
+        config = function()
+            require("indentmini").setup()
+        end
+    },
 
 
-	-- r plugins
+	-- R plugins
 	{ "R-nvim/cmp-r" },
 
 	{
