@@ -45,7 +45,6 @@ vim.opt.laststatus = 0
 -- local str = string.repeat('-', vim.api.nvim_win_get_width(0))
 -- vim.opt.statusline = str
 
-
 --vim.loader.disable()
 
 -- do
