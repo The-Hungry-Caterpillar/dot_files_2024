@@ -51,7 +51,40 @@ return {
 	-- R stuff
 	{ "R-nvim/cmp-r" },
 
-	-- R stuff
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {
+			code = {
+				sign = false,
+				width = "block",
+				right_pad = 1,
+				style = "none",
+			},
+			heading = {
+				sign = false,
+				icons = {},
+			},
+		},
+		ft = { "markdown", "norg", "rmd", "org" },
+		config = function(_, opts)
+			require("render-markdown").setup(opts)
+			LazyVim.toggle.map("<leader>um", {
+				name = "Render Markdown",
+				get = function()
+					return require("render-markdown.state").enabled
+				end,
+				set = function(enabled)
+					local m = require("render-markdown")
+					if enabled then
+						m.enable()
+					else
+						m.disable()
+					end
+				end,
+			})
+		end,
+	},
+
 	{
 		"R-nvim/R.nvim",
 		lazy = false,
@@ -99,80 +132,11 @@ return {
 		end,
 	},
 
-	-- R stuff
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			require("cmp").setup({ sources = { { name = "cmp_r" } } })
 			require("cmp_r").setup({})
 		end,
-	},
-
-	-- color schemes
-	{ "yorickpeterse/vim-paper", name = "paper", priority = 1000 },
-	{ "shaunsingh/nord.nvim", priority = 1000 },
-	{ "AlexvZyl/nordic.nvim", priority = 1000 },
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		config = function()
-			require("solarized-osaka").setup({
-				transparent = true,
-				terminal_colors = false,
-			})
-		end,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		priority = 1000,
-		config = function()
-			require("kanagawa").setup({
-				transparent = false,
-			})
-		end,
-	},
-	{
-		"Aliqyan-21/darkvoid.nvim",
-		priority = 1000,
-		config = function()
-			require("darkvoid").setup({
-				transparent = true,
-				glow = true,
-				colors = {
-					-- search_highlight = "#429EFF",
-					-- operator = "#429EFF",
-				},
-			})
-		end,
-	},
-	{
-		"ribru17/bamboo.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("bamboo").setup({
-				style = "vulgaris", -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
-				transparent = true, -- Show/hide background
-				dim_inactive = false, -- Dim inactive windows/buffers
-			})
-		end,
-	},
-	{
-		"Mofiqul/dracula.nvim",
-		priority = 1000,
-		opts = {
-			transparent_bg = false,
-			italic_comment = true,
-		},
-	},
-
-	-- set color scheme
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "darkvoid",
-		},
 	},
 }
