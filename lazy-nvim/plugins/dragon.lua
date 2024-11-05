@@ -1,5 +1,10 @@
 return {
 
+	{
+		"akinsho/bufferline.nvim",
+		event = "BufReadPre",
+	},
+
 	-- tmux integration
 	{
 		"christoomey/vim-tmux-navigator",
