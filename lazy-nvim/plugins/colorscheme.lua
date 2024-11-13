@@ -39,11 +39,15 @@ return {
 			italic_comment = true,
 		},
 	},
+	{
+		"bartekjaszczak/finale-nvim",
+		priority = 1000,
+	},
 	-- set color scheme
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "zenwritten",
+			colorscheme = "finale",
 		},
 	},
 }

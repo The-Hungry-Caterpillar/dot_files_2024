@@ -1,10 +1,5 @@
 return {
 
-	{
-		"akinsho/bufferline.nvim",
-		event = "BufReadPre",
-	},
-
 	-- tmux integration
 	{
 		"christoomey/vim-tmux-navigator",
@@ -52,6 +47,38 @@ return {
 
 	-- string and hex color previews
 	{ "NvChad/nvim-colorizer.lua" },
+
+	-- smooth scrolling
+	{
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup({
+				mappings = { -- Keys to be mapped to their corresponding default scrolling animation
+					"<C-u>",
+					"<C-d>",
+					"<C-b>",
+					"<C-f>",
+					"<C-y>",
+					"<C-e>",
+					"zt",
+					"zz",
+					"zb",
+				},
+				-- Hide cursor while scrolling
+				hide_cursor = true,
+				-- Stop at <EOF> when scrolling downwards
+				stop_eof = true,
+				-- Stop scrolling when the cursor reaches the scrolloff margin of the
+				-- file
+				respect_scrolloff = true,
+				-- The cursor will keep on scrolling even if the window cannot scroll
+				-- further
+				cursor_scrolls_alone = false,
+				easing = "circular", -- Default easing function
+				performance_mode = false, -- Disable "Performance Mode" on all buffers.
+			})
+		end,
+	},
 
 	-- R stuff
 	{ "R-nvim/cmp-r" },
