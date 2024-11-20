@@ -43,11 +43,14 @@ return {
 		"bartekjaszczak/finale-nvim",
 		priority = 1000,
 	},
+	{
+		"NTBBloodbath/doom-one.nvim",
+	},
 	-- set color scheme
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "finale",
+			colorscheme = "doom-one",
 		},
 	},
 }

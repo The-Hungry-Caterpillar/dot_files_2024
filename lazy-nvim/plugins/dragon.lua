@@ -46,7 +46,7 @@ return {
 	{ "xiyaowong/virtcolumn.nvim" },
 
 	-- string and hex color previews
-	{ "NvChad/nvim-colorizer.lua" },
+	{ "norcalli/nvim-colorizer.lua" },
 
 	-- smooth scrolling
 	{
