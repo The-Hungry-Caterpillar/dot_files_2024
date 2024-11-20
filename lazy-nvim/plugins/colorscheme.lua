@@ -46,6 +46,9 @@ return {
 	{
 		"NTBBloodbath/doom-one.nvim",
 	},
+	{
+		"marko-cerovac/material.nvim",
+	},
 	-- set color scheme
 	{
 		"LazyVim/LazyVim",
