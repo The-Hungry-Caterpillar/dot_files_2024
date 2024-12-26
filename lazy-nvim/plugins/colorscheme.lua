@@ -1,6 +1,26 @@
 return {
 	-- color schemes
 	{ "yorickpeterse/vim-paper", name = "paper", priority = 1000 },
+	{ "Verf/deepwhite.nvim", priority = 1000 },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				transparent_background = false,
+			})
+		end,
+	},
+	{
+		"Tsuzat/NeoSolarized.nvim",
+		priority = 1000,
+		config = function()
+			require("NeoSolarized").setup({
+				transparent = true,
+			})
+		end,
+	},
 	{
 		"Aliqyan-21/darkvoid.nvim",
 		priority = 1000,
@@ -43,9 +63,7 @@ return {
 		"bartekjaszczak/finale-nvim",
 		priority = 1000,
 	},
-	{
-		"NTBBloodbath/doom-one.nvim",
-	},
+	{ "NTBBloodbath/doom-one.nvim" },
 	{
 		"marko-cerovac/material.nvim",
 	},
@@ -53,7 +71,8 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "doom-one",
+			-- colorscheme = "catppuccin-macchiato",
+			colorscheme = "dracula-soft",
 		},
 	},
 }
