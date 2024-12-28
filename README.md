@@ -2,6 +2,7 @@ Copy of my dotfiles as of 08022024
 
 Clone this repo to ~
 
+
 ## zshrc setup
 ```
 cd ~
