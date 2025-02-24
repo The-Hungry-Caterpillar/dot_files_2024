@@ -143,7 +143,7 @@ return {
 
 				-- -- for horizontal split
 				-- rconsole_width = 0,
-				-- rconsole_height = 20,
+				-- rconsole_height = 40,
 
 				-- other keymaps
 				pipe_keymap = "",
@@ -170,6 +170,14 @@ return {
 			require("cmp").setup({ sources = { { name = "cmp_r" } } })
 			require("cmp_r").setup({})
 		end,
+	},
+
+	{
+		"catgoose/nvim-colorizer.lua",
+		event = "BufReadPre",
+		opts = { -- set to setup table
+			filetypes = { "*" },
+		},
 	},
 
 	{

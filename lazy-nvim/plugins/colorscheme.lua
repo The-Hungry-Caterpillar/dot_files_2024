@@ -15,23 +15,13 @@ return {
 		end,
 	},
 
-	{
-		"zenbones-theme/zenbones.nvim",
-		dependencies = "rktjmp/lush.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.g.zenbones_darken_comments = 45
-		end,
-	},
-
 	{ "Verf/deepwhite.nvim", priority = 1000 },
 
 	{ "Mofiqul/vscode.nvim", priority = 1000 },
 
 	{ "rebelot/kanagawa.nvim", priority = 1000 },
 
-	{ "hachy/eva01.vim", priority = 1000 },
+	{ "rose-pine/neovim", name = "rose-pine", priority = 1000 },
 
 	{
 		"catppuccin/nvim",
@@ -43,8 +33,6 @@ return {
 			})
 		end,
 	},
-
-	{ "ribru17/bamboo.nvim" },
 
 	{
 		"craftzdog/solarized-osaka.nvim",
@@ -65,9 +53,22 @@ return {
 	},
 
 	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+
+	{
+		"profesorpaiche/toytiza.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+
+	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "catppuccin-mocha",
+			colorscheme = "toytiza",
+			-- colorscheme = "dracula",
 		},
 	},
 }
