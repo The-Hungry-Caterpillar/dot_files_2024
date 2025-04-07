@@ -65,9 +65,16 @@ return {
 	},
 
 	{
+		"alexxGmZ/e-ink.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+
+	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "toytiza",
+			colorscheme = "e-ink",
+			-- colorscheme = "solarized-osaka",
 			-- colorscheme = "dracula",
 		},
 	},
