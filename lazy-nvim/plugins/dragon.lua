@@ -134,6 +134,7 @@ return {
 					on_filetype = function()
 						vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {})
 						vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {})
+						vim.api.nvim_buf_set_keymap(0, "i", "fd", "<Plug>RInsertAssign", { noremap = true })
 					end,
 				},
 
@@ -144,10 +145,6 @@ return {
 				-- -- for horizontal split
 				-- rconsole_width = 0,
 				-- rconsole_height = 40,
-
-				-- other keymaps
-				pipe_keymap = "",
-				assignment_keymap = "<Localleader>,",
 
 				disable_cmds = {
 					"RClearConsole",
