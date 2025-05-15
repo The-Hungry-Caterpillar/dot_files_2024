@@ -81,7 +81,8 @@ return {
 		opts = {
 			-- colorscheme = "vscode",
 			-- colorscheme = "tokyonight-night",
-			colorscheme = "github_dark_dimmed",
+			-- colorscheme = "github_dark_dimmed",
+			colorscheme = "darkvoid",
 
 			-- colorscheme = "catppuccin",
 			-- colorscheme = "solarized-osaka",

@@ -85,19 +85,20 @@ return {
 
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
+		ft = { "markdown", "norg", "rmd", "org", "Rmd" },
 		opts = {
 			code = {
 				sign = false,
 				width = "block",
 				right_pad = 1,
 				style = "none",
+				disable_background = true,
 			},
 			heading = {
 				sign = false,
 				icons = {},
 			},
 		},
-		ft = { "markdown", "norg", "rmd", "org" },
 		config = function(_, opts)
 			require("render-markdown").setup(opts)
 			LazyVim.toggle.map("<leader>um", {
@@ -129,6 +130,11 @@ return {
 				R_args = { "--quiet", "--no-save" },
 
 				pdfviewer = "xdg-open",
+
+				quarto_chunk_hl = {
+					highlight = true,
+					bg = "#222222",
+				},
 
 				hook = {
 					on_filetype = function()
