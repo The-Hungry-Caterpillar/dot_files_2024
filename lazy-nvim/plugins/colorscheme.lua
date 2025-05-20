@@ -9,8 +9,13 @@ return {
 		priority = 1000,
 		config = function()
 			require("darkvoid").setup({
-				transparent = false,
+				transparent = true,
 				glow = true,
+				colors = {
+					plugins = {
+						lualine = false,
+					},
+				},
 			})
 		end,
 	},
@@ -29,9 +34,20 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				transparent_background = false,
+				transparent_background = true,
 			})
 		end,
+	},
+
+	{
+		"folke/tokyonight.nvim",
+		opts = {
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
+		},
 	},
 
 	{
@@ -47,7 +63,7 @@ return {
 		"Mofiqul/dracula.nvim",
 		priority = 1000,
 		opts = {
-			transparent_bg = false,
+			transparent_bg = true,
 			italic_comment = true,
 		},
 	},
