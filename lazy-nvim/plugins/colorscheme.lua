@@ -90,6 +90,13 @@ return {
 		"projekt0n/github-nvim-theme",
 		lazy = false,
 		priority = 1000,
+		config = function()
+			require("github-theme").setup({
+				options = {
+					transparent = true,
+				},
+			})
+		end,
 	},
 
 	{
@@ -98,11 +105,10 @@ return {
 			-- colorscheme = "vscode",
 			-- colorscheme = "tokyonight-night",
 			-- colorscheme = "github_dark_dimmed",
-			colorscheme = "darkvoid",
-
-			-- colorscheme = "catppuccin",
+			-- colorscheme = "darkvoid",
+			-- colorscheme = "catppuccin-mocha",
 			-- colorscheme = "solarized-osaka",
-			-- colorscheme = "dracula",
+			colorscheme = "dracula",
 		},
 	},
 }
