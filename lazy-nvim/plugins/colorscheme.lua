@@ -20,6 +20,15 @@ return {
 		end,
 	},
 
+	{
+		"sontungexpt/witch",
+		priority = 1000,
+		lazy = false,
+		-- config = function(_, opts)
+		-- 	require("witch").setup(opts)
+		-- end,
+	},
+
 	{ "Verf/deepwhite.nvim", priority = 1000 },
 
 	{ "Mofiqul/vscode.nvim", priority = 1000 },
@@ -86,6 +95,8 @@ return {
 		priority = 1000,
 	},
 
+	{},
+
 	{
 		"projekt0n/github-nvim-theme",
 		lazy = false,
@@ -108,7 +119,7 @@ return {
 			-- colorscheme = "darkvoid",
 			-- colorscheme = "catppuccin-mocha",
 			-- colorscheme = "solarized-osaka",
-			colorscheme = "dracula",
+			colorscheme = "witch-dark",
 		},
 	},
 }

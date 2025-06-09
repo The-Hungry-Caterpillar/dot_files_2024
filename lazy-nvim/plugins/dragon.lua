@@ -160,17 +160,17 @@ return {
 		end,
 	},
 
-	{
-		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("lualine").setup({
-				options = {
-					icons_enabled = true,
-					theme = "iceberg_dark",
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	config = function()
+	-- 		require("lualine").setup({
+	-- 			options = {
+	-- 				icons_enabled = true,
+	-- 				theme = "iceberg_dark",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 
 	{
 		"hrsh7th/nvim-cmp",
