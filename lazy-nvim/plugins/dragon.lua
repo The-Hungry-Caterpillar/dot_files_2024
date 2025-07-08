@@ -139,7 +139,7 @@ return {
 
 				-- for vertical split
 				min_editor_width = 72,
-				rconsole_width = 70,
+				rconsole_width = 80,
 
 				-- -- for horizontal split
 				-- rconsole_width = 0,

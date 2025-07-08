@@ -9,7 +9,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("darkvoid").setup({
-				transparent = true,
+				transparent = false,
 				glow = true,
 				colors = {
 					plugins = {
@@ -43,7 +43,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				transparent_background = true,
+				transparent_background = false,
 			})
 		end,
 	},
@@ -51,7 +51,7 @@ return {
 	{
 		"folke/tokyonight.nvim",
 		opts = {
-			transparent = true,
+			transparent = false,
 			styles = {
 				sidebars = "transparent",
 				floats = "transparent",
@@ -64,7 +64,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			transparent = false,
+			transparent = true,
 		},
 	},
 
@@ -78,7 +78,7 @@ return {
 	},
 
 	{
-		"ellisonleao/gruvbox.nvim",
+		"szammyboi/dune.nvim",
 		lazy = false,
 		priority = 1000,
 	},
@@ -104,8 +104,22 @@ return {
 		config = function()
 			require("github-theme").setup({
 				options = {
-					transparent = true,
+					transparent = false,
 				},
+			})
+		end,
+	},
+
+	-- Using Lazy
+	{
+		"navarasu/onedark.nvim",
+		priority = 1000,
+		config = function()
+			require("onedark").setup({
+				style = "light",
+				-- style = "dark",
+				-- style = "cool",
+				-- style = "deep",
 			})
 		end,
 	},
@@ -113,13 +127,9 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			-- colorscheme = "vscode",
-			-- colorscheme = "tokyonight-night",
-			-- colorscheme = "github_dark_dimmed",
-			-- colorscheme = "darkvoid",
-			-- colorscheme = "catppuccin-mocha",
-			-- colorscheme = "solarized-osaka",
-			colorscheme = "witch-dark",
+			colorscheme = "onedark",
+			-- colorscheme = "dracula",
+			-- colorscheme = "base16-isotope",
 		},
 	},
 }
