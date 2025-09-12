@@ -1,3 +1,3 @@
 return {
-	{ "mini.ai", enabled = false },
+	-- { "mini.ai", enabled = false },
 }

@@ -10,7 +10,8 @@ map("i", "jk", "<Esc>")
 map("n", "<leader>w", vim.cmd.w)
 
 -- pipe shortcut for R
-map("i", "jj", "%>%")
+map("i", "jj", " %>%")
+-- map("i", "jj", " |>")
 
 -- easier terminal escape
 map("t", "<Esc>", "<C-\\><C-n>")

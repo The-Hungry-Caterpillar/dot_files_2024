@@ -38,14 +38,16 @@ return {
 	{ "rose-pine/neovim", name = "rose-pine", priority = 1000 },
 
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		"Shatur/neovim-ayu",
 		priority = 1000,
 		config = function()
-			require("catppuccin").setup({
-				transparent_background = false,
-			})
+			require("ayu").setup({})
 		end,
+	},
+
+	{
+		"ishan9299/nvim-solarized-lua",
+		priority = 1000,
 	},
 
 	{
@@ -56,15 +58,6 @@ return {
 				sidebars = "transparent",
 				floats = "transparent",
 			},
-		},
-	},
-
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			transparent = true,
 		},
 	},
 
@@ -125,11 +118,38 @@ return {
 	},
 
 	{
+		"sainnhe/everforest",
+		priority = 1000,
+		config = function()
+			vim.g.everforest_enable_italic = true
+			vim.g.everforest_background = "soft"
+			-- vim.g.everforest_background = "medium"
+			-- vim.g.everforest_background = "easy"
+		end,
+	},
+
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = false,
+		},
+	},
+
+	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+
+	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "onedark",
-			-- colorscheme = "dracula",
-			-- colorscheme = "base16-isotope",
+			-- colorscheme = "github_light",
+			-- colorscheme = "solarized-osaka",
+			colorscheme = "darkvoid",
 		},
 	},
 }
