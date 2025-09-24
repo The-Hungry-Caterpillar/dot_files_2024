@@ -149,7 +149,8 @@ return {
 		opts = {
 			-- colorscheme = "github_light",
 			-- colorscheme = "solarized-osaka",
-			colorscheme = "darkvoid",
+			-- colorscheme = "darkvoid",
+			colorscheme = "dracula",
 		},
 	},
 }
