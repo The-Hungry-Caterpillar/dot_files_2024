@@ -12,12 +12,12 @@ return {
 		},
 	},
 
-	-- better folding
-	{
-		"chrisgrieser/nvim-origami",
-		event = "VeryLazy",
-		opts = {}, -- needed even when using default config
-	},
+	-- -- better folding
+	-- {
+	-- 	"chrisgrieser/nvim-origami",
+	-- 	event = "VeryLazy",
+	-- 	opts = {}, -- needed even when using default config
+	-- },
 
 	-- also better folding
 	{

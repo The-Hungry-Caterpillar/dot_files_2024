@@ -5,6 +5,15 @@ return {
 	{ "NTBBloodbath/doom-one.nvim", priority = 1000 },
 
 	{
+		"ellisonleao/gruvbox.nvim",
+		opts = {
+			transparent_mode = true,
+		},
+		-- require("gruvbox").setup({
+		-- }),
+	},
+
+	{
 		"Aliqyan-21/darkvoid.nvim",
 		priority = 1000,
 		config = function()
@@ -145,12 +154,31 @@ return {
 	},
 
 	{
+		"catppuccin/nvim",
+		opts = {
+			transparent_background = true,
+		},
+	},
+
+	{
+		"jpwol/thorn.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			background = "warm", -- options are 'warm' and 'cold'
+			transparent = false, -- transparent background
+		},
+	},
+
+	{
 		"LazyVim/LazyVim",
 		opts = {
-			-- colorscheme = "github_light",
+			-- colorscheme = "witch-light",
 			-- colorscheme = "solarized-osaka",
 			-- colorscheme = "darkvoid",
-			colorscheme = "dracula",
+			colorscheme = "thorn",
+			-- colorscheme = "gruvbox",
+			-- colorscheme = "catppuccin-mocha",
 		},
 	},
 }
