@@ -2,15 +2,18 @@ return {
 
 	{ "bartekjaszczak/finale-nvim", priority = 1000 },
 
-	{ "NTBBloodbath/doom-one.nvim", priority = 1000 },
-
 	{
 		"ellisonleao/gruvbox.nvim",
 		opts = {
-			transparent_mode = true,
+			transparent_mode = false,
 		},
 		-- require("gruvbox").setup({
 		-- }),
+	},
+
+	{
+		"sainnhe/gruvbox-material",
+		priority = 1000,
 	},
 
 	{
@@ -74,21 +77,9 @@ return {
 		"Mofiqul/dracula.nvim",
 		priority = 1000,
 		opts = {
-			transparent_bg = true,
+			transparent_bg = false,
 			italic_comment = true,
 		},
-	},
-
-	{
-		"szammyboi/dune.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-
-	{
-		"profesorpaiche/toytiza.nvim",
-		lazy = false,
-		priority = 1000,
 	},
 
 	{
@@ -96,8 +87,6 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
-
-	{},
 
 	{
 		"projekt0n/github-nvim-theme",
@@ -112,28 +101,16 @@ return {
 		end,
 	},
 
-	-- Using Lazy
 	{
 		"navarasu/onedark.nvim",
 		priority = 1000,
 		config = function()
 			require("onedark").setup({
-				style = "light",
-				-- style = "dark",
+				-- style = "light",
+				style = "dark",
 				-- style = "cool",
 				-- style = "deep",
 			})
-		end,
-	},
-
-	{
-		"sainnhe/everforest",
-		priority = 1000,
-		config = function()
-			vim.g.everforest_enable_italic = true
-			vim.g.everforest_background = "soft"
-			-- vim.g.everforest_background = "medium"
-			-- vim.g.everforest_background = "easy"
 		end,
 	},
 
@@ -147,10 +124,9 @@ return {
 	},
 
 	{
-		"scottmckendry/cyberdream.nvim",
+		"gnualmalki/devel.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
 	},
 
 	{
@@ -161,24 +137,15 @@ return {
 	},
 
 	{
-		"jpwol/thorn.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			background = "warm", -- options are 'warm' and 'cold'
-			transparent = false, -- transparent background
-		},
-	},
-
-	{
 		"LazyVim/LazyVim",
 		opts = {
-			-- colorscheme = "witch-light",
+			colorscheme = "devel",
 			-- colorscheme = "solarized-osaka",
 			-- colorscheme = "darkvoid",
-			colorscheme = "thorn",
+			-- colorscheme = "onedark",
 			-- colorscheme = "gruvbox",
 			-- colorscheme = "catppuccin-mocha",
+			-- colorscheme = "dracula",
 		},
 	},
 }
