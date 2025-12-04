@@ -132,20 +132,21 @@ return {
 	{
 		"catppuccin/nvim",
 		opts = {
-			transparent_background = true,
+			transparent_background = false,
 		},
 	},
 
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "devel",
+			-- colorscheme = "devel",
+			-- colorscheme = "e-ink",
 			-- colorscheme = "solarized-osaka",
 			-- colorscheme = "darkvoid",
 			-- colorscheme = "onedark",
 			-- colorscheme = "gruvbox",
 			-- colorscheme = "catppuccin-mocha",
-			-- colorscheme = "dracula",
+			colorscheme = "dracula",
 		},
 	},
 }
