@@ -63,9 +63,9 @@ zstyle ":completion:*" menu no
 # preview subdirectories in completion menu
 zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls --color $realpath"
 
-# other -----------------------------------------------------------------------
-# fuzzy finder integration
-eval "$(fzf --zsh)"
+# # other -----------------------------------------------------------------------
+# # fuzzy finder integration
+# eval "$(fzf --zsh)"
 
 
 # aliases ---------------------------------------------------------------------
@@ -75,46 +75,105 @@ alias yeet="rm -rf $1"
 alias c='clear -x'
 alias tree='tree --dirsfirst -F'
 alias hello='source ~/.zshrc'
-alias vim="~/.nvim.appimage"
-alias vedit='pushd ~/.config/nvim; ~/.nvim.appimage .; popd'
+alias vim="~/.nvim-linux-x86_64.appimage"
+alias vedit='pushd ~/.config/nvim; ~/.nvim-linux-x86_64.appimage .; popd'
 alias edit='vim ~/.zshrc'
 alias tedit="vim ~/.tmux.conf.local"
 alias redit="vim ~/.Rprofile"
 alias today="date +%m%d%Y"
 alias lg="lazygit"
+alias sq="squeue"
+alias squ="squeue -u ogataj"
+alias peek="tree -L 2"
+alias dia="/mnt/nas-centos-storage-1/home/DIA_v1.0/pipeline_scripts/dia"
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
+backup () {
+    sudo cp -ru /mnt/nas-centos-storage-1/home/DIA_runs/* \
+        /mnt/bioinformatics/Data/DIA/
+}
+
 she () {
     mkdir -p OUT
     JOB=$(basename ${1} .sh)
     TIME=$(date +%Y%m%d-%H%M)
     /usr/bin/time sh ${1} > OUT/${JOB}_${TIME}.out 2>&1
 }
+
 function knit() {
     OUT=./results/knitted_documents
     mkdir -p ${OUT}
     R -e "rmarkdown::render('$1', output_dir=\"${OUT}\")"
 }
+
 Rs () {
     mkdir -p OUT
     JOB=$(basename ${1} .sh)
     TIME=$(date +%Y%m%d-%H%M)
     Rscript ${1} >& OUT/${JOB}_${TIME}.out
 }
+
 makeproteomics () {
     mkdir ProjectMetaData
     mkdir -p MCC-CPP_Proteomics/TMT/Global/DDASearchResults
     mkdir -p MCC-CPP_Proteomics/TMT/Phospho/DDASearchResults
-    cp /mnt/centos-storage-1-home/ogataj/Documents/run_global.sh .
+    cp /mnt/nas-centos-storage-1/home/ogataj/Documents/run_global.sh .
     cd MCC-CPP_Proteomics
-    cp /mnt/centos-storage-1-home/centoswhirc/newscripts/TMT_GLOBAL.Rmd .
-    cp /mnt/centos-storage-1-home/centoswhirc/newscripts/TMT_PHOSPHO_RMD.Rmd .
-    cp /mnt/centos-storage-1-home/centoswhirc/newscripts/multi_phospho_rmd_wrapper.R .
-    cp /mnt/centos-storage-1-home/centoswhirc/newscripts/Multi-Rollup-Wrapper.R .
-    cp /mnt/centos-storage-1-home/centoswhirc/newscripts/Level4.Rmd .
+    cp /mnt/nas-centos-storage-1/home/centoswhirc/newscripts/TMT_GLOBAL.Rmd .
+    cp /mnt/nas-centos-storage-1/home/centoswhirc/newscripts/TMT_PHOSPHO_RMD.Rmd .
+    cp /mnt/nas-centos-storage-1/home/centoswhirc/newscripts/multi_phospho_rmd_wrapper.R .
+    cp /mnt/nas-centos-storage-1/home/centoswhirc/newscripts/Multi-Rollup-Wrapper.R .
+    cp /mnt/nas-centos-storage-1/home/centoswhirc/newscripts/Level4.Rmd .
     cd ..
 }
 makeR () {
     cp ~/Rtemplate.R . && mv Rtemplate.R ${1}
 }
 
+# diadocker () {
+#   docker run \
+#     -it \
+#     --rm \
+#     --privileged=true \
+#     -v ${1}:/$(basename ${1}) \
+#     dia /bin/bash
+# }
+
+
+diadocker() {
+  # Start building the docker command
+  cmd=( docker run -it --rm --privileged=true )
+  # Loop over all arguments and create -v mounts
+  for p in "$@"; do
+    mount_src=$(realpath -m "$p")
+    mount_dst="/$(basename "$p")"
+    cmd+=( -v "${mount_src}:${mount_dst}" )
+  done
+  # Add image + shell
+  cmd+=( dia /bin/bash )
+  # Execute the assembled command
+  "${cmd[@]}"
+}
+
+
+
 # vim mode, e.g. <esc> to normal mode and "i" for insert
 bindkey -v
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ogataj/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ogataj/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ogataj/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ogataj/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+source <(fzf --zsh)
+source <(fzf --zsh)
